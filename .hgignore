@@ -15,4 +15,4 @@ coverage
 .python
 .Python
 include
-
+testing/*.egg-info
