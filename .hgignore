@@ -16,3 +16,6 @@ coverage
 .Python
 include
 testing/*.egg-info
+.project
+.pydevproject
+.pydevproject.bak
