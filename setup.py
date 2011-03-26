@@ -23,6 +23,6 @@ setup(name='django_fanstatic',
       include_package_data=True,
       zip_safe=False,
       install_requires=[
-          'Django >= 1.2, <1.3',
+          'Django >= 1.3, <1.4',
           'fanstatic',
       ])
