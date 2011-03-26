@@ -1,8 +1,10 @@
+{% load fanstatic %}
 <html>
 <head>
   <title>fanstatic.</title>
 </head>
 <body>
   <p>It works!</p>
+  <p>Some nice image <img src="{% resourceurl "testapp:check.jpeg" %}" alt="Oh oh.. it's broken." /> </p>
 </body>
 </html>
