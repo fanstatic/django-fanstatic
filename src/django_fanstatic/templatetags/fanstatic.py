@@ -11,7 +11,7 @@ register = template.Library()
 def resourceurl(resource):
     parsed_name = resource.split(u':',1)
     if len(parsed_name) == 1:
-        raise template.TemplateSyntaxError(u"resource name must of the following syntax: library/rel_path. Got '%s'." %
+        raise template.TemplateSyntaxError(u"resource name must of the following syntax: library_name:rel_path_to_resource. Got '%s'." %
                                            (resource,))
 
     fs_lib = fanstatic.get_library_registry().get(parsed_name[0])
