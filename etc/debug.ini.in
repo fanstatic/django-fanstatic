@@ -1,0 +1,16 @@
+[server:main]
+use = egg:Paste#http
+host = 127.0.0.1
+port = 8080
+
+[pipeline:main]
+pipeline = fanstatic django
+
+[filter:fanstatic]
+use = egg:fanstatic#fanstatic
+versioning = true
+recompute_hashes = true
+
+[app:django]
+use = egg:repoze.django#django
+settings = testproject.settings

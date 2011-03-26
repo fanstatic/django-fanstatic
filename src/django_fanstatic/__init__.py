@@ -4,7 +4,7 @@ class FanstaticMiddleware(object):
 
     def process_request(self, request):
         # XXX config.
-        fanstatic.init_needed(base_url='/')
+        fanstatic.init_needed(base_url='')
 
     def process_response(self, request, response):
         # XXX response checking.
