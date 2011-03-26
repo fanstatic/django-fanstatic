@@ -44,7 +44,7 @@ SECRET_KEY = 'gj@c1kt5do=0e*@wi&6u#dky&n^8brk#i$q#e$m4-%^60+xe*+'
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
-    'django_fanstatic.FanstaticMiddleware',
+    #'django_fanstatic.FanstaticMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.doc.XViewMiddleware',

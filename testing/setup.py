@@ -11,7 +11,7 @@ setup(name='testproject',
       ],
       entry_points={
           'fanstatic.libraries': [
-              'testproject = testproject.resource:library',
+              'testapp = testproject.testapp.resource:library',
               ],
           },
       )
