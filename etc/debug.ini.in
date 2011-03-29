@@ -10,7 +10,7 @@ pipeline = fanstatic django
 use = egg:fanstatic#fanstatic
 versioning = true
 recompute_hashes = true
-base_url = /
+base_url = 
 
 [app:django]
 use = egg:repoze.django#django
