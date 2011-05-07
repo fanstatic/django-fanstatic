@@ -5,7 +5,7 @@ ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
 )
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 MANAGERS = ADMINS
@@ -43,15 +43,19 @@ ADMIN_MEDIA_PREFIX = '/admin_media/'
 SECRET_KEY = 'gj@c1kt5do=0e*@wi&6u#dky&n^8brk#i$q#e$m4-%^60+xe*+'
 
 MIDDLEWARE_CLASSES = (
+    'django_fanstatic.FanstaticMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.doc.XViewMiddleware',
-    'django_fanstatic.FanstaticMiddleware',
 )
 
 ROOT_URLCONF = 'testproject.urls'
 
+FANSTATIC_CONFIG = {
+    "base_url" : "" ,
+    #"publisher_signature" : "fanstatic"
+}
 
 INSTALLED_APPS = (
     'django.contrib.auth',
