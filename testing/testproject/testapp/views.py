@@ -16,3 +16,4 @@ def gen_error(request):
 
 def error(request):
     return render_to_response('testapp/error.html')
+

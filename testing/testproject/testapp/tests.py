@@ -2,9 +2,18 @@ import re
 from django.test import TestCase
 
 class ResourceTests(TestCase):
-    def test_static_resource(self):
+    def test_css(self):
         response = self.client.get('/')
-        print response.content
+        self.assertEqual(response.status_code,200)
+        css_match = re.search('<link[^>]+href="(?P<url>[^"]+)"[^/]+/>',response.content)
+        self.assertTrue(css_match is not None)
+        css_url = css_match.group("url")
+
+
+        # The css must be present
+        response = self.client.get(css_url)
+        self.assertEqual(response.status_code,200)
+        self.assertContains(response, '// a.css')
 
     def test_implied_image(self):
         response = self.client.get('/')
