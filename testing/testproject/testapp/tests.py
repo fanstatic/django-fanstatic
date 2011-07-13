@@ -24,7 +24,7 @@ class ResourceTests(TestCase):
         css_url = css_match.group("url")
         
         # The css must be present
-        self.assert_css_file(css_url,'// a.css')
+        self.assert_css_file(css_url,'/* a.css */')
         
     def test_error(self):
         """ test the cleaning of resources on exceptions """
@@ -45,7 +45,7 @@ class ResourceTests(TestCase):
         self.assertEqual(len(links),1) # this means that exactly one css link was generated
 
         # now test it is error.css
-        self.assert_css_file(links[0].group("url"),"// error.css")
+        self.assert_css_file(links[0].group("url"),"/* error.css */")
 
     def test_implied_image(self):
         " test an undeclared image resource  "
