@@ -66,7 +66,7 @@ class ResourceTests(TestCase):
         old_middleware = settings.MIDDLEWARE_CLASSES
 
         new_middleware = list(settings.MIDDLEWARE_CLASSES)
-        new_middleware.remove('django_fanstatic.FanstaticMiddleware')
+        new_middleware.remove('django_fanstatic.middleware.FanstaticMiddleware')
         settings.MIDDLEWARE_CLASSES = new_middleware
 
         # The index page should exist
