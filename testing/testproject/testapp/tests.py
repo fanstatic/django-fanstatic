@@ -31,7 +31,7 @@ class ResourceTests(TestCase):
         img_url = img_match.group("url")
         response = self.client.get(img_url)
         self.assertEqual(response.status_code,200)
-        self.assertTrue(len(response.content)>0):w
+        self.assertTrue(len(response.content)>0)
 
     def test_fanstatic_not_working_without_middleware(self):
         """
