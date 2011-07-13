@@ -4,11 +4,13 @@ from django.conf import settings
 from django.contrib import admin
 admin.autodiscover()
 
-#handler500 = 'testproject.testapp.views.error'
+handler500 = 'testproject.testapp.views.error'
 
 urlpatterns = patterns(
     '',
-    (r'^$', 'testproject.testapp.views.index')
+    (r'^$', 'testproject.testapp.views.index'),
+    (r'^error$', 'testproject.testapp.views.gen_error'),
+
 )
 
 if settings.DEBUG:
