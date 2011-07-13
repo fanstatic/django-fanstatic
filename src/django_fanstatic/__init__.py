@@ -7,8 +7,8 @@ class FanstaticMiddleware(object):
     def __init__(self):
         config = dict()
 
-        from settings import FANSTATIC_CONFIG
-        config.update(FANSTATIC_CONFIG)
+        from django.conf import settings
+        config.update(settings.FANSTATIC_CONFIG)
 
         # this is just to give useful feedback early on
         fanstatic.NeededResources(**config)
@@ -17,7 +17,7 @@ class FanstaticMiddleware(object):
 
         self.publisher = fanstatic.Publisher(fanstatic.get_library_registry())
 
-        self.publisher_signature = "/"+ FANSTATIC_CONFIG.get("publisher_signature",fanstatic.DEFAULT_SIGNATURE) +"/"
+        self.publisher_signature = "/"+ settings.FANSTATIC_CONFIG.get("publisher_signature",fanstatic.DEFAULT_SIGNATURE) +"/"
 
 
 
