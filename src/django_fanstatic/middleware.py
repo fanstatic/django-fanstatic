@@ -8,7 +8,10 @@ class FanstaticMiddleware(object):
         config = dict()
 
         from django.conf import settings
-        config.update(settings.FANSTATIC_CONFIG)
+        try:
+            config.update(settings.FANSTATIC_CONFIG)
+        except AttributeError:
+            pass
 
         # this is just to give useful feedback early on
         fanstatic.NeededResources(**config)
@@ -17,7 +20,14 @@ class FanstaticMiddleware(object):
 
         self.publisher = fanstatic.Publisher(fanstatic.get_library_registry())
 
-        self.publisher_signature = "/"+ settings.FANSTATIC_CONFIG.get("publisher_signature",fanstatic.DEFAULT_SIGNATURE) +"/"
+        signature = None
+        try:
+            signature = settings.FANSTATIC_CONFIG.get("publisher_signature")
+        except AttributeError:
+            pass
+
+        if signature is None: signature = fanstatic.DEFAULT_SIGNATURE
+        self.publisher_signature = "/"+ signature +"/"
 
 
 
