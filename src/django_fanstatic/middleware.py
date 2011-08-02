@@ -34,7 +34,7 @@ class FanstaticMiddleware(object):
 
     def process_request(self,request):
         if not isinstance(request,WSGIRequest):
-            raise Exception("FanstaticMiddelwheres only work under a WSGI based server")
+            raise Exception("FanstaticMiddleware only work under a WSGI based server")
 
         if not request.method in ['GET', 'POST']:
             return # nothing to do
